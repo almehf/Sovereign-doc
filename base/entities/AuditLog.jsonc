@@ -1,0 +1,72 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "document_upload",
+        "pii_detected",
+        "pii_masked",
+        "document_approved",
+        "document_flagged",
+        "document_rejected",
+        "document_indexed",
+        "user_query",
+        "user_invited",
+        "user_role_changed",
+        "setting_changed",
+        "collection_created",
+        "collection_updated",
+        "collection_deleted"
+      ],
+      "description": "Type of audited action"
+    },
+    "actor_id": {
+      "type": "string",
+      "description": "User ID who performed the action"
+    },
+    "actor_name": {
+      "type": "string",
+      "description": "Name of the actor"
+    },
+    "actor_role": {
+      "type": "string",
+      "description": "Role of the actor"
+    },
+    "document_id": {
+      "type": "string",
+      "description": "Related document ID"
+    },
+    "document_title": {
+      "type": "string",
+      "description": "Related document title"
+    },
+    "collection_id": {
+      "type": "string",
+      "description": "Related collection ID"
+    },
+    "details": {
+      "type": "object",
+      "description": "Action-specific details and metadata"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "critical"
+      ],
+      "default": "info",
+      "description": "Severity level of the event"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "IP address of the actor"
+    }
+  },
+  "required": [
+    "action_type",
+    "actor_id"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "OrganizationSettings",
+  "type": "object",
+  "properties": {
+    "setting_key": {
+      "type": "string",
+      "description": "Unique setting key"
+    },
+    "setting_value": {
+      "type": "string",
+      "description": "Setting value (JSON string for complex values)"
+    },
+    "setting_group": {
+      "type": "string",
+      "enum": [
+        "llm",
+        "embedding",
+        "general",
+        "compliance"
+      ],
+      "description": "Setting category group"
+    },
+    "label": {
+      "type": "string",
+      "description": "Human-readable label"
+    },
+    "label_ar": {
+      "type": "string",
+      "description": "Arabic label"
+    },
+    "description": {
+      "type": "string",
+      "description": "Setting description"
+    }
+  },
+  "required": [
+    "setting_key",
+    "setting_value",
+    "setting_group"
+  ]
+}

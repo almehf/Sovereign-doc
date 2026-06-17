@@ -1,0 +1,69 @@
+{
+  "name": "PIIRule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Rule display name"
+    },
+    "name_ar": {
+      "type": "string",
+      "description": "Arabic rule name"
+    },
+    "pattern_type": {
+      "type": "string",
+      "enum": [
+        "regex",
+        "keyword",
+        "heuristic"
+      ],
+      "description": "Detection pattern type"
+    },
+    "pattern_value": {
+      "type": "string",
+      "description": "Regex pattern or keyword list"
+    },
+    "pii_category": {
+      "type": "string",
+      "enum": [
+        "national_id",
+        "iqama",
+        "phone",
+        "email",
+        "full_name",
+        "address",
+        "dob",
+        "bank_account",
+        "passport",
+        "other"
+      ],
+      "description": "PII category this rule detects"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this rule is active"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "default": "medium",
+      "description": "Detection priority"
+    },
+    "description": {
+      "type": "string",
+      "description": "Rule description"
+    }
+  },
+  "required": [
+    "name",
+    "pattern_type",
+    "pattern_value",
+    "pii_category"
+  ]
+}

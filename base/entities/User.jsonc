@@ -1,0 +1,24 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "compliance_officer",
+        "user"
+      ],
+      "default": "user",
+      "description": "User role for access control"
+    },
+    "organization": {
+      "type": "string",
+      "description": "Organization or department name"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    }
+  }
+}
