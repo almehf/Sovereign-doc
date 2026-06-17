@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { base } from '@/api/baseClient';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
-import { Search, Filter, Download, FileText } from 'lucide-react';
+import { Search, Filter, Download } from 'lucide-react';
 import AuditTimeline from '@/components/audit/AuditTimeline';
 
 export default function AuditLog() {
-  const { lang } = useOutletContext();
+  const { lang } = useLayoutContext();
   const [logs, setLogs] = useState([]);
   const [search, setSearch] = useState('');
   const [actionFilter, setActionFilter] = useState('all');

@@ -1,12 +1,11 @@
-import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { base } from '@/api/baseClient';
 import {
   LayoutDashboard, FileText, ShieldCheck, FolderOpen, MessageSquare,
-  ScrollText, Settings, Users, LogOut, Menu, X, Globe, ChevronRight,
-  ChevronLeft, Search, Building2
+  ScrollText, Settings, Users, LogOut, Menu, X, Globe,
+  Building2
 } from 'lucide-react';
-import LanguageToggle from '@/components/LanguageToggle';
 
 const navItems = {
   admin: [
@@ -32,7 +31,6 @@ const navItems = {
 
 export default function Layout() {
   const location = useLocation();
-  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [lang, setLang] = useState(() => localStorage.getItem('mawthiq-lang') || 'ar');
   const [user, setUser] = useState(null);
@@ -73,8 +71,6 @@ export default function Layout() {
     compliance_officer: { ar: 'مسؤول الامتثال', en: 'Compliance Officer' },
     user: { ar: 'مستخدم', en: 'User' },
   };
-
-  const Chevron = lang === 'ar' ? ChevronLeft : ChevronRight;
 
   return (
     <div className="min-h-screen bg-background" dir={lang === 'ar' ? 'rtl' : 'ltr'}>

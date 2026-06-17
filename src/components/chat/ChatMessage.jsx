@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown';
-import { ShieldCheck, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import SourceCitation from './SourceCitation';
 import { cn } from '@/lib/utils';
 

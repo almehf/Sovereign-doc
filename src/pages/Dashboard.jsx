@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { useOutletContext, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { base } from '@/api/baseClient';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FileText, ShieldCheck, FolderOpen, MessageSquare, ScrollText, ArrowUpRight, TrendingUp, AlertTriangle } from 'lucide-react';
+import { FileText, ShieldCheck, FolderOpen, MessageSquare, ScrollText, ArrowUpRight, AlertTriangle } from 'lucide-react';
 import StatusBadge from '@/components/StatusBadge';
 import AuditTimeline from '@/components/audit/AuditTimeline';
 
 export default function Dashboard() {
-  const { lang, user, role } = useOutletContext();
+  const { lang, user, role } = useLayoutContext();
   const [stats, setStats] = useState(null);
   const [recentLogs, setRecentLogs] = useState([]);
   const [pendingReviews, setPendingReviews] = useState([]);

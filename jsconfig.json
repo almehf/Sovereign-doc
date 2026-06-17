@@ -2,6 +2,18 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/components/ui/button": ["./src/types/ui-shims/button.d.ts"],
+      "@/components/ui/card": ["./src/types/ui-shims/card.d.ts"],
+      "@/components/ui/dialog": ["./src/types/ui-shims/dialog.d.ts"],
+      "@/components/ui/input": ["./src/types/ui-shims/input.d.ts"],
+      "@/components/ui/label": ["./src/types/ui-shims/label.d.ts"],
+      "@/components/ui/select": ["./src/types/ui-shims/select.d.ts"],
+      "@/components/ui/tabs": ["./src/types/ui-shims/tabs.d.ts"],
+      "@/components/ui/progress": ["./src/types/ui-shims/progress.d.ts"],
+      "@/components/ui/badge": ["./src/types/ui-shims/badge.d.ts"],
+      "@/components/ui/textarea": ["./src/types/ui-shims/textarea.d.ts"],
+      "@/components/ui/input-otp": ["./src/types/ui-shims/input-otp.d.ts"],
+      "@/components/ui/use-toast": ["./src/types/ui-shims/use-toast.d.ts"],
       "@/*": ["./src/*"]
     },
     "jsx": "react-jsx",
@@ -14,8 +26,16 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "types": []
+    "types": ["vite/client"]
   },
-  "include": ["src/components/**/*.js", "src/pages/**/*.jsx", "src/Layout.jsx"],
-  "exclude": ["node_modules", "dist", "src/vite-plugins", "src/components/ui", "src/api", "src/lib"]
-} 
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/components/ui/**"
+  ]
+}

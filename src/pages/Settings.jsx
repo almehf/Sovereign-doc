@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { base } from '@/api/baseClient';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Settings, Save, CheckCircle, Cpu, Globe, Shield } from 'lucide-react';
+import { Save, CheckCircle, Cpu, Globe, Shield } from 'lucide-react';
 
 export default function SettingsPage() {
-  const { lang, user } = useOutletContext();
+  const { lang, user } = useLayoutContext();
   const [settings, setSettings] = useState({});
   const [formData, setFormData] = useState({
     llmEndpoint: '',
@@ -116,6 +116,10 @@ export default function SettingsPage() {
 
   return (
     <div className="space-y-6 max-w-3xl">
+      {loading ? (
+        <p className="text-muted-foreground">{lang === 'ar' ? 'جاري التحميل...' : 'Loading settings...'}</p>
+      ) : (
+      <>
       <div>
         <h1 className="text-3xl font-heading font-bold text-foreground">{t.title}</h1>
       </div>
@@ -236,6 +240,8 @@ export default function SettingsPage() {
           </span>
         )}
       </div>
+      </>
+      )}
     </div>
   );
 }

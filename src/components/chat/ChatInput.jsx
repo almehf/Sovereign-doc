@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Send, Loader2, Paperclip } from 'lucide-react';
+import { Send, Loader2 } from 'lucide-react';
 
 export default function ChatInput({ onSend, isLoading, lang = 'ar', placeholder }) {
   const [input, setInput] = useState('');

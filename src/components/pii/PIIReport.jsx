@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ShieldCheck, AlertTriangle, CheckCircle, XCircle, Eye, EyeOff, ScrollText } from 'lucide-react';
+import { ShieldCheck, AlertTriangle, CheckCircle, XCircle, Eye, EyeOff } from 'lucide-react';
 import { useState } from 'react';
 
 export default function PIIReport({ document: doc, lang = 'ar', onApprove, onFlag, onReject }) {

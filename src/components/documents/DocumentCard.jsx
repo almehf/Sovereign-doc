@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { FileText, ShieldCheck, Calendar, User, Layers } from 'lucide-react';
+import { FileText, ShieldCheck, Calendar, Layers } from 'lucide-react';
 import StatusBadge from '@/components/StatusBadge';
 import { format } from 'date-fns';
 import { arSA } from 'date-fns/locale';

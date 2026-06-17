@@ -17,6 +17,9 @@ const variants = {
   pending: { bg: 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400', label: { ar: 'قيد الانتظار', en: 'Pending' } },
 };
 
+/**
+ * @param {{ status: string, lang?: string, className?: string }} props
+ */
 export default function StatusBadge({ status, lang = 'ar', className }) {
   const v = variants[status] || variants.uploaded;
   return (

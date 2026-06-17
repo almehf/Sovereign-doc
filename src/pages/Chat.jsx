@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { base } from '@/api/baseClient';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent } from '@/components/ui/card';
-import { Sparkles, FolderOpen, MessageSquare, AlertCircle } from 'lucide-react';
+import { Sparkles, FolderOpen, AlertCircle } from 'lucide-react';
 import ChatMessage from '@/components/chat/ChatMessage';
 import ChatInput from '@/components/chat/ChatInput';
 
 export default function Chat() {
-  const { lang, user } = useOutletContext();
+  const { lang, user } = useLayoutContext();
   const [messages, setMessages] = useState([]);
   const [collections, setCollections] = useState([]);
   const [documents, setDocuments] = useState([]);
@@ -96,10 +96,14 @@ ${docContext || 'لا توجد مستندات متاحة.'}
         add_context_from_internet: false,
       });
 
+      const llmResponse = /** @type {string | { response?: string, answer?: string }} */ (response);
+
       const assistantMsg = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: typeof response === 'string' ? response : response?.response || response?.answer || JSON.stringify(response),
+        content: typeof llmResponse === 'string'
+          ? llmResponse
+          : llmResponse.response || llmResponse.answer || JSON.stringify(llmResponse),
         timestamp: new Date().toISOString(),
         sources: contextDocs.map(d => ({
           title: d.title,

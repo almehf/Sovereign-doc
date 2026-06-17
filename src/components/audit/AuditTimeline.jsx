@@ -1,7 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import {
   FileText, ShieldCheck, MessageSquare, UserPlus, Settings, FolderOpen,
-  AlertTriangle, CheckCircle, XCircle, Clock, ArrowUpRight, Search
+  AlertTriangle, CheckCircle, XCircle, Clock, Search
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { arSA } from 'date-fns/locale';

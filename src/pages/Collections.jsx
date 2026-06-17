@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { base } from '@/api/baseClient';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,7 +10,7 @@ import { FolderOpen, Plus, Edit, Trash2, FileText, Search } from 'lucide-react';
 import StatusBadge from '@/components/StatusBadge';
 
 export default function Collections() {
-  const { lang, user, role } = useOutletContext();
+  const { lang, user, role } = useLayoutContext();
   const [collections, setCollections] = useState([]);
   const [documents, setDocuments] = useState([]);
   const [search, setSearch] = useState('');

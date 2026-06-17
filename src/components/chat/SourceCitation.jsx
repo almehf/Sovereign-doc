@@ -1,7 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { FileText, ExternalLink, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 export default function SourceCitation({ sources = [], lang = 'ar' }) {
   const [expanded, setExpanded] = useState({});

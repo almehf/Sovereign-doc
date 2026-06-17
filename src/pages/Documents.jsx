@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { base } from '@/api/baseClient';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -9,7 +9,7 @@ import DocumentCard from '@/components/documents/DocumentCard';
 import PIIReport from '@/components/pii/PIIReport';
 
 export default function Documents() {
-  const { lang, user } = useOutletContext();
+  const { lang, user } = useLayoutContext();
   const [documents, setDocuments] = useState([]);
   const [collections, setCollections] = useState([]);
   const [search, setSearch] = useState('');
